@@ -1,9 +1,9 @@
 var config = {
    port: "8181",
 
-   project: "SERP",
-   sitename: "Test",
-   title: "SERP-connect | a web-tool for linking practical challenges with research results in software testing",
+   project: "test project",
+   sitename: "tbd",
+   title: "unnamed project",
 
    backend: "serp-test"
 }
