@@ -1,0 +1,130 @@
+extends ../../shared/components/views/base
+block view-specific-scripts
+    // libraries - d3
+    script(src="//d3js.org/d3.v3.min.js" charset="utf-8")
+
+    // app
+    script(src="js/util/color.js")
+    script(src="js/util/usage.js")
+    script(src="js/util/treeify.js")
+    script(src="js/dataset.js")
+    script(src="js/overview.js")
+    script(src="js/index.js")
+    script(src="js/info.js")
+block content
+    div.inner-content
+        h1.text-title
+            | SERP-test: connecting researchers & developers in software testing
+
+        p
+            | This website is developed to support the use and evolution of the &#32;
+            a(href="http://link.springer.com/article/10.1007/s11219-016-9322-x").link SERP-Test taxonomy
+            | &#32; which aims to bridge the gap between research and practice in
+            | software testing. This is an extension of the &#32;
+            a(href="http://serpconnect.cs.lth.se").link SERP-connect
+            | &#32; project.
+
+        p
+            | Descriptions of practical challenges and research results are
+            | classified and organized according to four facets. The taxonomy
+            | and related facets can be inspected below. For more information
+            | please refer to the paper cited above.
+
+        div.overview-container
+            div.ov-tax-container
+                span#taxonomy
+                div.center The SERP-Test taxonomy
+            div.width-30.column-spaced
+                div.overview-explanation
+                    div.explanation-container
+                        img(src="/img/mouse-over.png")#hand.square
+                        p#hover-facet-title  Hover over the table to see which facet you are currently viewing
+                    div.explanation-container
+                        a#square.square
+                        h3#facet-title Serp
+                    p#facet-explanation Click the tables on the left to get more information about the facets
+                    div.entry-count
+
+        h4.text-title.center.new-section
+            | Features
+        div.overview-container
+            div.width-40
+                div.facet-explanation
+                    h3 Classify in a shared taxonomy
+                    p Using a shared taxonomy developed by the SERP research team.
+            div.width-40
+                div.facet-explanation
+                    h3 Search
+                    p Use search to find challenges and research related to your own queries.
+        div.overview-container
+            div.width-40
+                div.facet-explanation
+                    h3 Visualise relationships
+                    p Use the visualiser to get an overview of the relations between your entries.
+            div.width-40
+                div.facet-explanation
+                    h3 Organise with collections
+                    p Organise your entries in collections and invite other people to collaborate.
+        div.overview-container
+            div.width-40
+                div.facet-explanation
+                    h3 Experiment with extensions
+                    p Extend the shared taxonomy if your dataset requires finer granularity.
+            div.width-40
+                 div.facet-explanation
+                    h3 Share your data
+                    p Share your collection search and explore links with colleagues.
+
+    div.inner-content.new-section
+        h4.text-title.center
+            | Get started
+        div.overview-container
+            div.width-40
+                div.facet-explanation
+                    h3 Explore
+                    p
+                        | Head over to the &#32;
+                        a(href="/explore.html").link explore
+                        |  &#32; page to get an idea of how the visualiser works.
+            div.width-40
+                div.facet-explanation
+                    h3 Register
+                    p
+                        | To submit entries you first need an account, sign up &#32;
+                        a(href="/login.html").link here
+                        | !
+        div.overview-container
+            div.width-40
+                div.facet-explanation
+                    h3 View a collection
+                    p
+                        | You can &#32;
+                        a(href="/explore.html#5").link explore
+                        |  &#32; and &#32;
+                        a(href="/search.html#5").link search
+                        | &#32; an existing collection.
+            div.width-40
+                div.facet-explanation
+                    h3 Search
+                    p
+                        | Want to look at the existing data? Check it out on the &#32;
+                        a(href="/search.html").link search
+                        |  &#32; page!
+        div.overview-container
+            div.width-40
+                div.facet-explanation
+                    h3 Learn more
+                    p
+                        | Go to the &#32;
+                        a(href="/about.html").link about
+                        |  &#32; page for more information on the SERP-connect project.
+
+            div.width-40
+                div.facet-explanation
+                    h3 Contribute
+                    p
+                        | Interested in this project? Take a look at our &#32;
+                        a(href="https://github.com/emenlu/connect").link GitHub
+                        | &#32; page for documentation on the web tool itself along with guides for contributors!
+
+    div.last-section

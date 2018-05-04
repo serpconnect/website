@@ -9,13 +9,14 @@ var methodOverride = require('method-override');
 var favicon = require('serve-favicon');
 var errorHandler = require('errorhandler');
 var less = require("less-middleware");
+var config = require('./config')
 
-app.set("port", "8181");
+app.set("port", config.port);
 app.set("views", [
    path.join(__dirname, "src", "views"),                 // serve src/views first
    path.join(__dirname, "shared", "components", "views") 
 ]);
-app.set("view engine", "jade");
+app.set("view engine", "pug");
 app.set('view cache', false)
 app.use(less(path.join(__dirname, "src"), {
     // don't output css in src/less/
@@ -31,6 +32,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, "bin"))); // host css
 app.use(express.static(path.join(__dirname, "src"))); // host everything else
+app.use(express.static(path.join(__dirname, "shared", "components"))); // host everything else
 app.use(favicon(path.join(__dirname, "src/favicon.ico")));
 app.use(errorHandler());
 
@@ -45,7 +47,7 @@ if ("development" === env) {
 }
 
 // for simplicity, links may have .html added to allow browsing from
-// local file system. since we want jade templates to be loaded, force
+// local file system. since we want pug templates to be loaded, force
 // browser to load the them instead. by redirection...
 app.use(function(req, res, next) {
     if (req.path.indexOf('.html') >= 0) {
@@ -57,7 +59,9 @@ app.use(function(req, res, next) {
 
 function renderView(page) {
     return function(req, res) {
-        res.render(page);
+        res.render(page, { 
+            settings: config
+        })
     }
 }
 
