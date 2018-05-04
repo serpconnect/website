@@ -1,7 +1,7 @@
 const ioutil = require('./ioutil.js')
 
 /* allowed image extensions (case-sensitive) */
-var allowed = ['.png', '.jpg', '.jpeg']
+var allowed = ['.png', '.jpg', '.jpeg', '.svg']
 
 /* copy images from serpent/src/img --> serpent/bin/img
  *
