@@ -36,6 +36,6 @@ function render(file, src, dst) {
 }
 
 module.exports = function (file) {
-	ioutil.process('./src/views/', './bin/', render)(file);
 	ioutil.process('./shared/components/views/', './bin/', render)(file);
+	ioutil.process('./src/views/', './bin/', render)(file);
 }

@@ -18,6 +18,6 @@ var allowed = ['.png', '.jpg', '.jpeg']
 }
 
 module.exports = function (file) {
-	ioutil.process('./src/img/', './bin/img/', copy)(file);
 	ioutil.process('./shared/components/img/', './bin/img/', copy)(file);
+	ioutil.process('./src/img/', './bin/img/', copy)(file);
 }
