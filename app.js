@@ -82,6 +82,9 @@ app.get("/collection", renderView("collection"))
 app.get("/collection/entries", renderView("collection/entries"))
 app.get("/collection/users", renderView("collection/users"))
 app.get("/collection/taxonomy", renderView("collection/taxonomy"))
+app.get("/presentation", renderView("presentation/index"))
+app.get("/presentation/explore", renderView("presentation/explore"))
+app.get("/presentation/search", renderView("presentation/search"))
 app.get("/resetpassword", renderView("resetpassword"))
 
 app.get("*", function(req, res) {
